@@ -1,0 +1,35 @@
+.main-header {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    min-height: 600px;
+    color: #fff;
+}
+
+.main-header .showcase {
+    padding-top: 80px;
+}
+
+.active-link {
+    color: #d847f1;
+    font-weight: bold;
+}
+
+.section-developers {
+    position: relative;
+    background-image: url(../img/code.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+    width: 100%;
+    border-top: #4f0052 5px solid;
+    border-bottom: #4f0052 5px solid;
+}
+
+.primary-overlay {
+    background-color: #b308b95d;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

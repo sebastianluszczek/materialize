@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Materialize Sandbox</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div>
+    <nav>
+      <div>
+        <div>
+          <a href="#">Blue</a>
+          <ul>
+            <li>
+              <a href="#!">Blue Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Blue Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Blue Link 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div>
+    <nav>
+      <div>
+        <div>
+          <a href="#">Red</a>
+          <ul>
+            <li>
+              <a href="#!">Red Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Red Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Red Link 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div>
+    <nav>
+      <div>
+        <div>
+          <a href="#">Green</a>
+          <ul>
+            <li>
+              <a href="#!">Green Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Green Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Green Link 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- MOVES CONTENT UP -->
+  <div style="margin-top: 500px;"></div>
+
+  <!-- Import  materialize.js -->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Dropdown JS
+      var elems = document.querySelectorAll('.dropdown-button');
+      var instances = M.Dropdown.init(elems, {
+        constrainWidth: false,
+        hover: false,
+        alignment: "left",
+        coverTrigger: false
+      });
+
+      // My JS
+
+    });
+  </script>
+</body>
+
+</html>
