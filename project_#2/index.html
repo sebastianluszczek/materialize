@@ -16,7 +16,7 @@
     <!--Custom css styles -->
     <link rel="stylesheet" href="./css/main.css">
 
-    <title>Quazzu</title>
+    <title>Quazzu Cloude Hosting</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
                             <a href="signup.html">Sign Up</a>
                         </li>
                         <li>
-                            <a href="#" class="btn purple">LOGIN</a>
+                            <a href="#modal_login" class="btn purple modal-trigger">LOGIN</a>
                         </li>
                         <li>
                             <a href="https://facebook.com" target="_blank">
@@ -194,6 +194,119 @@
         </div>
     </section>
 
+    <!-- podcast section -->
+    <section class="section section-podcast white-text">
+        <div class="primary-overlay valign-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m8">
+                        <h3>Listen to the Quazzu Podcast.</h3>
+                        <p>Every Thursday at 5pm EST</p>
+                    </div>
+                    <div class="col s12 m4">
+                        <a href="#" class="btn purple btn-large">
+                            <i class="fas fa-podcast right"></i> Listen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section testimonial -->
+    <section class="section section-testimonial grey lighten-4">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="carousel carousel-slider center">
+                        <div class="carousel-item" href="#one">
+                            <h2>Testimonial 1</h2>
+                            <p class="flow-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+                                asperiores dolorem ipsa. Eveniet numquam quibusdam quaerat ipsum soluta modi quas
+                                itaque quam autem ex, molestiae unde sequi dolorem, in qui! </p>
+                            <p><em>- John Doe from Microsystem</em></p>
+                            <div class="carousel-fixed-item center hide-on-small-only">
+                                <a href="#!" class="btn purple white-text">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item" href="#two">
+                            <h2>Testimonial 2</h2>
+                            <p class="flow-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+                                asperiores dolorem ipsa. Eveniet numquam quibusdam quaerat ipsum soluta modi quas
+                                itaque quam autem ex, molestiae unde sequi dolorem, in qui! </p>
+                            <p><em>- Will Smith from Microsystem</em></p>
+                            <div class="carousel-fixed-item center hide-on-small-only">
+                                <a href="#!" class="btn purple white-text">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item" href="#three">
+                            <h2>Testimonial 3</h2>
+                            <p class="flow-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+                                asperiores dolorem ipsa. Eveniet numquam quibusdam quaerat ipsum soluta modi quas
+                                itaque quam autem ex, molestiae unde sequi dolorem, in qui! </p>
+                            <p><em>- Ashley Mara from Microsystem</em></p>
+                            <div class="carousel-fixed-item center hide-on-small-only">
+                                <a href="#!" class="btn purple white-text">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="page-footer purple darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About Us</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Doloribus pariatur a, inventore tempore blanditiis at, nobis tenetur asperiores, doloremque
+                        iusto magni adipisci. Enim accusantium suscipit reiciendis ut rerum tempore necessitatibus?</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="solutions.html">Solutions</a></li>
+                        <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright purple darken-3">
+            <div class="container">
+                Quazzu © 2018
+                <a class="grey-text text-lighten-4 right" href="#!">Terms and conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- login modal -->
+    <div class="modal" id="modal_login">
+        <div class="modal-content">
+            <h4>Account Login</h4>
+            <p>Login to acces your account dashboard.</p>
+            <form>
+                <div class="input-field">
+                    <input type="email" id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="password">
+                    <label for="password">Password</label>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close modal-action purple btn">
+                <i class="fas fa-sync"></i> Reset Password</a>
+            <a href="#!" class="modal-close modal-action purple btn">
+                <i class="fas fa-lock"></i> Login</a>
+        </div>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>

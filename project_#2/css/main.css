@@ -9,12 +9,24 @@
     padding-top: 80px;
 }
 
+.main-header-inner {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    min-height: 350px;
+    color: #fff;
+}
+
+.main-header-inner .showcase {
+    padding-top: 50px;
+}
+
 .active-link {
     color: #d847f1;
     font-weight: bold;
 }
 
-.section-developers {
+.section-developers,
+.section-podcast {
     position: relative;
     background-image: url(../img/code.jpg);
     background-position: center;
@@ -25,6 +37,14 @@
     border-bottom: #4f0052 5px solid;
 }
 
+.section-podcast {
+    background-image: url(../img/circuit.jpg);
+}
+
+.section-podcast a {
+    margin-top: 30px;
+}
+
 .primary-overlay {
     background-color: #b308b95d;
     height: 100%;
@@ -32,4 +52,29 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.section-podcast .primary-overlay {
+    background-color: #470349a6;
+}
+
+.carousel-item p {
+    font-size: 20px !important;
+}
+
+.tabs .indicator {
+    background-color: #6a1b9a !important;
+}
+
+.btn-extended {
+    width: 100% !important;
+    margin-top: 30px;
+}
+
+@media (max-width: 500px) {
+
+    .section-developers,
+    .section-podcast {
+        min-height: 240px;
+    }
 }
