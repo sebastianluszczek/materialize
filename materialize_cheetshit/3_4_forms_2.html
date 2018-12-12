@@ -28,7 +28,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -54,7 +54,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -80,7 +80,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -103,7 +103,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -130,55 +130,66 @@
     <!-- START HERE -->
     <form>
       <!-- SWITCH -->
-      <div>
-
+      <div class="switch">
+        <label>
+          DISABLE
+          <input type="checkbox" checked>
+          <span class="lever"></span>
+          ENEBLED
+        </label>
       </div>
 
       <!-- DISABLED SWITCH -->
-      <div>
-
+      <div class="switch">
+        <label>
+          DISABLE
+          <input type="checkbox">
+          <span class="lever"></span>
+          ENEBLED
+        </label>
       </div>
 
       <br>
       <br>
 
       <!-- FILE INPUT -->
-      <div>
-        <div>
+      <div class="file-field input-field">
+        <div class="btn">
           <span>Upload File</span>
           <input type="file">
         </div>
-        <div>
-          <input type="text">
+        <div class="file-path-wrapper">
+          <input type="text" class="file-path">
         </div>
       </div>
 
       <!-- RANGE SLIDER -->
-      <p>
-        <input type="range">
+      <p class="range-field">
+        <input type="range" min="0" max="10">
       </p>
 
       <!-- DATE PICKER -->
-      <div>
-        <input type="text" id="date">
+      <div class="input-field">
+        <input type="text" id="date" class="datepicker">
         <label for="date">Choose a Date</label>
       </div>
 
       <!-- TIME PICKER -->
-      <div>
-        <input type="text" id="time">
+      <div class="input-field">
+        <input type="text" id="time" class="timepicker">
         <label for="time">Choose a Time</label>
       </div>
 
       <!-- CHARACTER COUNTER -->
-      <div>
-        <input id="post" type="text">
+      <div class="input-field">
+        <input id="post" type="text" data-length="10">
         <label for="post">Post</label>
       </div>
 
       <!-- AUTOCOMPLETE -->
-      <div>
-        <input type="text" id="fruit">
+      <div class="input-field">
+        <i class="material-icons prefix">textsms</i>
+        <input type="text" id="fruit" class="autocomplete">
         <label for="fruit">Type a Fruit</label>
       </div>
 
@@ -197,24 +208,44 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
 
-  <!-- Import  materialize.js -->
+
+  <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      // init datepicked
+      var datepicker_instances = M.Datepicker.init(document.querySelectorAll('.datepicker'), {
+
+      });
+
+      // init timepicker
+      var timepicker_instances = M.Timepicker.init(document.querySelectorAll('.timepicker'), {
+        defoultTime: 'now',
+        twelveHour: false
+      });
+
+      // init autocomplete
+      var ac_instances = M.Autocomplete.init(document.querySelectorAll('.autocomplete'), {
+        data: {
+          "apple": null,
+          "orange": null,
+          "pear": null,
+          "banana": null,
+          "plum": null,
+          "grapes": null
+        },
+        limit: 20
+      });
 
     });
   </script>

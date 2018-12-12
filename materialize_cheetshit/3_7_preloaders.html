@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -127,16 +127,16 @@
       <div class="col s12 m6">
 
         <!-- DETERMINATE PROGRESS -->
-        <div>
-          <div></div>
+        <div class="progress">
+          <div class="determinate" style="width: 70%"></div>
         </div>
 
       </div>
       <div class="col s12 m6">
 
         <!-- INDETERMINATE PROGRESS -->
-        <div>
-          <div></div>
+        <div class="progress">
+          <div class="indeterminate"></div>
         </div>
 
       </div>
@@ -146,16 +146,16 @@
       <div class="col s12 m4">
 
         <!-- SMALL RED -->
-        <div>
-          <div>
-            <div>
-              <div></div>
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
             </div>
-            <div>
-              <div></div>
+            <div class="gap-path">
+              <div class="circle"></div>
             </div>
-            <div>
-              <div></div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
             </div>
           </div>
         </div>
@@ -164,16 +164,16 @@
       <div class="col s12 m4">
 
         <!-- STANDARD BLUE -->
-        <div>
-          <div>
-            <div>
-              <div></div>
+        <div class="preloader-wrapper active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
             </div>
-            <div>
-              <div></div>
+            <div class="gap-path">
+              <div class="circle"></div>
             </div>
-            <div>
-              <div></div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
             </div>
           </div>
         </div>
@@ -182,16 +182,16 @@
       <div class="col s12 m4">
 
         <!-- BIG YELLOW -->
-        <div>
-          <div>
-            <div>
-              <div></div>
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-yellow-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
             </div>
-            <div>
-              <div></div>
+            <div class="gap-path">
+              <div class="circle"></div>
             </div>
-            <div>
-              <div></div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
             </div>
           </div>
         </div>
@@ -202,6 +202,45 @@
 
     <!-- FLASHING COLORS -->
 
+    <div class="preloader-wrapper big active">
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-path">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-path">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-path">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+    </div>
 
     <!-- END HERE -->
 
@@ -209,24 +248,17 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
-
-      // My JS
 
     });
   </script>

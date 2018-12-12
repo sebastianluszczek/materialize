@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -126,42 +126,42 @@
 
     <!-- SIDENAV -->
 
-    <ul>
+    <ul id="slide-out" class="sidenav">
       <li>
-        <div>
-          <div>
-            <img>
+        <div class="user-view">
+          <div class="background">
+            <img src="./img/img4.jpg">
           </div>
-          <a>
-            <img>
+          <a href="#!">
+            <img class="circle" src="./img/img5.jpg">
           </a>
-          <a>
-            <span>John Doe</span>
+          <a href="#!">
+            <span class="white-text name">John Doe</span>
           </a>
-          <a>
-            <span>jdoe@gmail.com</span>
+          <a href="#!">
+            <span class="white-text email">jdoe@gmail.com</span>
           </a>
         </div>
       </li>
       <li>
-        <a>
-          <i></i>Dashboard</a>
+        <a href="#!">
+          <i class="material-icons">dashboard</i>Dashboard</a>
       </li>
       <li>
-        <a>Posts</a>
+        <a href="#!">Posts</a>
       </li>
       <li>
-        <div></div>
+        <div class="divider"></div>
       </li>
       <li>
-        <a>Account Info</a>
+        <a href="#!" class="subheader">Account Info</a>
       </li>
       <li>
-        <a>Logout</a>
+        <a href="#!" class="waves-effect">Logout</a>
       </li>
     </ul>
-    <a>
-      <i></i>
+    <a href="#!" data-target="slide-out" class=" sidenav-trigger">
+      <i class="material-icons">menu</i>
     </a>
 
 
@@ -171,24 +171,19 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      var sidenav_instances = M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
 
     });
   </script>

@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -125,71 +125,71 @@
     <!-- START HERE -->
 
     <!-- CAROUSEL -->
-    <div>
-      <a href="">
-        <img src="">
+    <!-- <div class="carousel">
+      <a href="#one!" class="carousel-item">
+        <img src="./img/img1.jpg">
       </a>
-      <a href="">
-        <img src="">
+      <a href="#two!" class="carousel-item">
+          <img src="./img/img2.jpg">
+        </a>
+      <a href="#three!" class="carousel-item">
+        <img src="./img/img3.jpg">
       </a>
-      <a href="">
-        <img src="">
+      <a href="#four!" class="carousel-item">
+        <img src="./img/img4.jpg">
       </a>
-      <a href="">
-        <img src="">
+      <a href="#five!" class="carousel-item">
+        <img src="./img/img5.jpg">
       </a>
-      <a href="">
-        <img src="">
-      </a>
-    </div>
+    </div> -->
 
     <!-- FULL WIDTH CAROUSEL -->
-    <div>
-      <a href="">
-        <img src="">
-      </a>
-      <a href="">
-        <img src="">
-      </a>
-      <a href="">
-        <img src="">
-      </a>
-      <a href="">
-        <img src="">
-      </a>
-      <a href="">
-        <img src="">
-      </a>
-    </div>
+    <!-- <div class="carousel carousel-slider">
+      <a href="#one!" class="carousel-item">
+          <img src="./img/img1.jpg">
+        </a>
+      <a href="#two!" class="carousel-item">
+            <img src="./img/img2.jpg">
+          </a>
+      <a href="#three!" class="carousel-item">
+          <img src="./img/img3.jpg">
+        </a>
+      <a href="#four!" class="carousel-item">
+          <img src="./img/img4.jpg">
+        </a>
+      <a href="#five!" class="carousel-item">
+          <img src="./img/img5.jpg">
+        </a>
+    </div> -->
 
     <!-- CONTENT SLIDER -->
-    <div>
-      <div href="">
+    <div class="carousel carousel-slider center">
+      <div href="#one!" class="carousel-item red white-text">
         <h2>Panel One</h2>
         <p>This is panel one</p>
-        <div>
-          <a>button</a>
+        <div class="carousel-fixed-itme center">
+          <a class="btn waves-effect black">button</a>
         </div>
       </div>
-      <div href="">
+      <div href="#two!" class="carousel-item blue white-text">
         <h2>Panel Two</h2>
-        <p>This is panel two</p>
-        <div>
-          <a>button</a>
+        <p>This is panel one</p>
+        <div class="carousel-fixed-itme center">
+          <a class="btn waves-effect black">button</a>
         </div>
       </div>
-      <div href="">
+      <div href="#three!" class="carousel-item green white-text">
         <h2>Panel Three</h2>
-        <p>This is panel three</p>
-        <div>
-          <a>button</a>
+        <p>This is panel one</p>
+        <div class="carousel-fixed-itme center">
+          <a class="btn waves-effect black">button</a>
         </div>
       </div>
-      <div href="">
+      <div href="#four!" class="carousel-item cyan white-text">
         <h2>Panel Four</h2>
-        <p>This is panel four</p>
-        <div>
-          <a>button</a>
+        <p>This is panel one</p>
+        <div class="carousel-fixed-itme center">
+          <a class="btn waves-effect black">button</a>
         </div>
       </div>
     </div>
@@ -201,24 +201,24 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      // var carousel_instances = M.Carousel.init(document.querySelectorAll('.carousel'), {});
+
+      var carousel_instances = M.Carousel.init(document.querySelectorAll('.carousel-slider'), {
+        fullWidth: true,
+        indicators: true
+      });
 
     });
   </script>

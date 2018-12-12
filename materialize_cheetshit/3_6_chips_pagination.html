@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -125,13 +125,13 @@
     <!-- START HERE -->
 
     <!-- CHIPS -->
-    <div>
+    <div class="chip">
       Web development
     </div>
-    <div>
+    <div class="chip">
       Web design
     </div>
-    <div>
+    <div class="chip">
       Programming
     </div>
 
@@ -139,61 +139,64 @@
     <br>
 
     <!-- CHIPS WITH CLOSE -->
-    <div>
+    <div class="chip">
       Web development
-      <i></i>
+      <i class="material-icons close">close</i>
     </div>
-    <div>
+    <div class="chip">
       Web design
-      <i></i>
+      <i class="material-icons close">close</i>
     </div>
-    <div>
+    <div class="chip">
       Programming
-      <i></i>
+      <i class="material-icons close">close</i>
     </div>
 
     <br>
     <br>
 
     <!-- CHIPS WITH IMAGES -->
-    <div>
-      <img src=""> John Doe
+    <div class="chip">
+      <img src="./img/img1.jpg"> John Doe
+      <i class="material-icons close">close</i>
     </div>
-    <div>
-      <img src=""> Brian Jackson
+    <div class="chip">
+      <img src="./img/img2.jpg"> Brian Jackson
+      <i class="material-icons close">close</i>
     </div>
-    <div>
-      <img src=""> Lori Smith
+    <div class="chip">
+      <img src="./img/img3.jpg"> Lori Smith
+      <i class="material-icons close">close</i>
     </div>
 
     <!-- CHIPS INPUT WITH AUTOCOMPLETE-->
-    <div></div>
+    <div class="chips chips-autocomplete"></div>
 
     <!-- PAGINATION -->
-    <ul>
-      <li>
+    <ul class="pagination">
+      <li class="disabled">
         <a href="#!">
-          <i></i>
+          <i class="material-icons">chevron_left</i>
         </a>
       </li>
-      <li>
+      <li class="waves-effect">
         <a href="#!">1</a>
       </li>
-      <li>
+      <li class="waves-effect">
         <a href="#!">2</a>
       </li>
-      <li>
+      <li class="waves-effect active">
         <a href="#!">3</a>
       </li>
-      <li>
+      <li class="waves-effect">
         <a href="#!">4</a>
       </li>
-      <li>
+      <li class="waves-effect">
         <a href="#!">5</a>
       </li>
       <li>
         <a href="#!">
-          <i></i>
+            <i class="material-icons">chevron_right</i>
         </a>
       </li>
     </ul>
@@ -204,25 +207,27 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
-
+      var chips_instances = M.Chips.init(document.querySelectorAll('.chips'), {
+        autocompleteOptions: {
+          data: {
+            "dupa": null,
+            "cipa": null,
+            "chuj": null
+          }
+        }
+      });
     });
   </script>
 </body>

@@ -12,16 +12,28 @@
 
   <title>Materialize Sandbox</title>
   <style>
+    html, body, .block {
+      height: 100vh;
+    }
+    .pin-top {
+      position: relative;
+    }
+    .pin-bottom {
+      position: relative;
+    }
+    .pinned {
+      position: fixed !important;
+    }
   </style>
 </head>
 
 <body>
-  <div>
-    <nav>
-      <div>
-        <div>
-          <a href="#">Blue</a>
-          <ul>
+  <div id="blue" class="block blue">
+    <nav class="pushpin-demo-nav" data-target="blue">
+      <div class="nav-wrapper light-blue">
+        <div class="container">
+          <a href="#" class="brand-logo">Blue</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
               <a href="#!">Blue Link 1</a>
             </li>
@@ -37,12 +49,12 @@
     </nav>
   </div>
 
-  <div>
-    <nav>
-      <div>
-        <div>
-          <a href="#">Red</a>
-          <ul>
+  <div id="red" class="block red">
+    <nav class="pushpin-demo-nav" data-target="red">
+      <div class="nav-wrapper light-red">
+        <div class="container">
+          <a href="#" class="brand-logo">Red</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
               <a href="#!">Red Link 1</a>
             </li>
@@ -58,12 +70,12 @@
     </nav>
   </div>
 
-  <div>
-    <nav>
-      <div>
-        <div>
-          <a href="#">Green</a>
-          <ul>
+  <div id="green" class="block green">
+    <nav class="pushpin-demo-nav" data-target="green">
+      <div class="nav-wrapper light-green">
+        <div class="container">
+          <a href="#" class="brand-logo">Green</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
               <a href="#!">Green Link 1</a>
             </li>
@@ -79,24 +91,31 @@
     </nav>
   </div>
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+
+      document.querySelectorAll('.pushpin-demo-nav').forEach(function (e) {
+        var target = e.dataset.target;
+        console.log(document.getElementById(target));
+        this.pushpin({
+          top: document.getElementById(target).offsetTop,
+          bottom: document.getElementById(target).offsetTop + document.getElementById(target).outerHeight() -
+            document.getElementById(target).height()
+        });
+      });
+
+
+      var pushpin_instances = M.Pushpin.init(document.querySelectorAll('.pushpin'), {});
 
     });
   </script>

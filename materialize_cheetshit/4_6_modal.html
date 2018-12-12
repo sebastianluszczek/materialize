@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -125,28 +125,28 @@
     <!-- START HERE -->
 
     <!-- MODAL TRIGGER -->
-    <a>Modal</a>
+    <a class="btn waves-effect waves-dark modal-trigger" href="#modal1">Modal</a>
 
     <!-- MODAL -->
-    <div>
-      <div>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
         <h4>Modal Header</h4>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit reiciendis laboriosam porro laborum, aliquid
           ipsa fugiat
           molestias laudantium quod quo.</p>
       </div>
-      <div>
-        <a>Ok</a>
+      <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-dark btn red">Ok</a>
       </div>
     </div>
 
 
     <!-- FIXED FOOTER MODAL TRIGGER -->
-    <a>Fixed Footer Modal</a>
+    <a class="btn waves-effect waves-dark modal-trigger" href="#modal2">Fixed Footer Modal</a>
 
     <!-- FIXED FOOTER MODAL -->
-    <div>
-      <div>
+    <div id="modal2" class="modal modal-fixed-footer">
+      <div class="modal-content">
         <h4>Fixed Footer Modal</h4>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione impedit eum repudiandae doloribus
           praesentium incidunt,
@@ -188,26 +188,26 @@
           dolor
           sequi facere maiores commodi, reiciendis quasi. Eos tenetur consectetur omnis nihil. Iste at similique eaque?</p>
       </div>
-      <div>
-        <a>Ok</a>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Ok</a>
       </div>
     </div>
 
 
 
     <!-- BOTTOM SHEET MODAL TRIGGER -->
-    <a>Bottom Sheet Modal</a>
+    <a class="btn waves-effect waves-dark modal-trigger" href="#modal3">Bottom Sheet Modal</a>
 
     <!-- BOTTOM SHEET MODAL -->
-    <div>
-      <div>
+    <div id="modal3" class="modal bottom-sheet">
+      <div class="modal-content">
         <h4>Bottom Sheet Modal</h4>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In quam ut doloremque quisquam eveniet dolores,
           est numquam
           sapiente aliquid necessitatibus, dicta odio voluptate hic cupiditate aperiam dolorum maxime veniam quae.</p>
       </div>
-      <div>
-        <a>Ok</a>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Ok</a>
       </div>
     </div>
 
@@ -219,27 +219,25 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      var modal_instances = M.Modal.init(document.querySelectorAll('.modal'), {
+        dismissible: false,
+        inDuration: 500,
+        outDuration: 500
+      });
 
     });
-  </script>
   </script>
 </body>
 

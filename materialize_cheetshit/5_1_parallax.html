@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -122,55 +122,45 @@
     <br>
     <br>
 
-    <!-- START HERE -->
-
-    <!-- PARALLAX -->
-    <div>
-      <div>
-        <img src="">
-      </div>
-    </div>
-    <div>
-      <div>
-        <h2>Parallax Example</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores doloremque accusantium veniam modi ea non
-          quisquam
-          corporis. Doloremque error, dolore, perspiciatis reprehenderit soluta vitae, at quisquam dolorum sequi quidem
-          veritatis
-          amet earum nihil illo dignissimos dicta! Hic nesciunt animi distinctio!</p>
-      </div>
-    </div>
-    <div>
-      <div>
-        <img src="">
-      </div>
-    </div>
-
-
     <!-- END HERE -->
+  </div>
 
-
+  <!-- PARALLAX outside of container so parallaxes will be full website width...-->
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="./img/img1.jpg">
+    </div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Parallax Example</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores doloremque accusantium veniam modi ea non
+        quisquam
+        corporis. Doloremque error, dolore, perspiciatis reprehenderit soluta vitae, at quisquam dolorum sequi quidem
+        veritatis
+        amet earum nihil illo dignissimos dicta! Hic nesciunt animi distinctio!</p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="./img/img2.jpg">
+    </div>
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      var paralax_instances = M.Parallax.init(document.querySelectorAll('.parallax'), {});
 
     });
   </script>

@@ -23,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -75,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -98,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -127,39 +127,39 @@
     <div class="row">
       <div class="col s12 m6">
         <!-- MATERIAL BOX -->
-        <img src="">
+        <img src="./img/img1.jpg" class="materialboxed" width="100%">
       </div>
       <div class="col s12 m6">
         <!-- WITH CAPTION -->
-        <img src="">
+        <img src="./img/img2.jpg" class="materialboxed" width="100%" data-caption="This is my photo!">
       </div>
     </div>
 
     <!-- SLIDER -->
-    <div>
-      <ul>
+    <div class="slider">
+      <ul class="slides">
         <li>
-          <img src="">
+          <img src="./img/img3.jpg">
           <!-- CENTER ALIGN CAPTION -->
-          <div>
-            <h3>Center Caption</h3>
-            <h5>Lorem ipsum dolor sit amet.</h5>
+          <div class="caption center-align">
+            <h3 class="black-text">Center Caption</h3>
+            <h5 class="light black-text text-lighten-3 ">Lorem ipsum dolor sit amet.</h5>
           </div>
         </li>
         <li>
-          <img src="">
+          <img src="./img/img4.jpg">
           <!-- LEFT ALIGN CAPTION -->
-          <div>
+          <div class="caption left-align">
             <h3>Left Aligned Caption</h3>
-            <h5>Here's our small slogan.</h5>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
           </div>
         </li>
         <li>
-          <img src="">
+          <img src="./img/img5.jpg">
           <!-- RIGHT ALIGN CAPTION -->
-          <div>
+          <div class="caption right-align">
             <h3>Right Aligned Caption</h3>
-            <h5>Here's our small slogan.</h5>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
           </div>
         </li>
       </ul>
@@ -172,24 +172,23 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
-
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      var material_box_instances = M.Materialbox.init(document.querySelectorAll('.materialboxed'), {});
+
+      var slider_instances = M.Slider.init(document.querySelectorAll('.slider'), {
+        interval: 3000
+      });
 
     });
   </script>

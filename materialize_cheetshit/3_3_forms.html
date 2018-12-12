@@ -14,6 +14,7 @@
   <style>
     .input-field {
       margin-bottom: 30px;
+      color: #111 !important;
     }
   </style>
 </head>
@@ -28,7 +29,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-trigger btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -54,7 +55,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-trigger btn btn-large green' href='#' data-target='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -80,7 +81,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-trigger btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -103,7 +104,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-trigger btn btn-large red' href='#' data-target='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -130,74 +131,124 @@
     <!-- START HERE -->
     <form>
       <!-- TEXT FIELD -->
-      <div>
-        <input placeholder="Name" id="name" type="text">
+      <div class="input-field">
+        <input id="name" type="text">
         <label for="name">Name</label>
       </div>
 
       <!-- VALUE & DISABLED -->
-      <div>
-        <input placeholder="Email" id="email" type="email">
+      <div class="input-field">
+        <input placeholder="Email" id="email" type="email" value="jdoe@gmail.com" disabled>
         <label for="email">Email</label>
       </div>
 
       <!-- TEXTAREA -->
-      <div>
-        <textarea placeholder="Message" id="message"></textarea>
+      <div class="input-field">
+        <textarea placeholder="Message" id="message" class="materialize-textarea"></textarea>
         <label for="message">Message</label>
       </div>
 
       <!-- INLINE FIELD -->
       Number of users:
-      <div>
+      <div class="input-field inline">
         <input id="users" type="text">
         <label for="users">#</label>
       </div>
 
       <!-- ICON PREFIX -->
-      <div>
+      <div class="input-field">
+        <i class="material-icons prefix">phone</i>
         <input id="phone" type="tel">
         <label for="phone">Phone Number</label>
       </div>
 
       <!-- VALIDATION & ERROR -->
-      <div>
-        <input placeholder="Email" id="email" type="email">
+      <div class="input-field">
+        <input id="email" type="email" class="validate" style="color: black">
         <label for="email">Email</label>
+        <span class="helper-text" data-error="wrong" data-success="right"></span>
       </div>
 
       <!-- SELECT (Must be initialized) -->
-      <div>
+      <div class="input-field">
         <select>
-
+          <option value="" disabled selected>Select Option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
         </select>
         <label>Select List</label>
       </div>
 
       <!-- OPTION GROUPS -->
-      <div>
+      <div class="input-field">
         <select>
-
+          <optgroup label="Option Group 1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </optgroup>
+          <optgroup label="Option Group 2">
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+          </optgroup>
         </select>
-        <label>Multiple Select</label>
+        <label>Option Group Select</label>
       </div>
 
       <!-- MULTIPLE SELECT -->
-      <div>
-        <select>
-
+      <div class="input-field">
+        <select multiple>
+          <option value="" disabled selected>Select Option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
         </select>
-        <label>Multiple Select</label>
+        <label>Select List</label>
       </div>
 
       <!-- RADIO BUTTONS -->
 
+      <p>
+        <label>
+          <input type="radio" name="gender" id="male">
+          <span>Male</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="radio" name="gender" id="female">
+          <span>Female</span>
+        </label>
+      </p>
       <br>
       <br>
 
       <!-- CHECKBOXES -->
 
-
+      <p>
+        <label for="html">
+          <input type="checkbox" name="tech" id="html">
+          <span>HTML</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" name="tech" id="css">
+          <span>CSS</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" class="filled-in" name="tech" id="js">
+          <span>JS</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" name="tech" id="php" disabled>
+          <span>PHP</span>
+        </label>
+      </p>
       <br>
       <br>
       <div>
@@ -213,24 +264,20 @@
   </div>
   <!-- ./ CONTAINER END -->
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 500px;"></div>
 
-  <!-- Import  materialize.js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
+      var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, {
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        coverTrigger: false,
+        alignment: 'left'
       });
 
-      // My JS
+      var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
 
     });
   </script>

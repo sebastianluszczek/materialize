@@ -11,18 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Materialize Sandbox</title>
-  <!-- <style>
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1 0 auto;
-    }
-      
-  </style> -->
 </head>
 
 <body>
@@ -35,7 +23,7 @@
     <!-- MENU ROW -->
     <div class="row">
       <div class="col s3">
-        <a class='dropdown-button btn btn-large blue' href='#' data-target='css1'>CSS 1</a>
+        <a class='dropdown-button btn btn-large blue' href='#' data-activates='css1'>CSS 1</a>
         <ul id='css1' class='dropdown-content'>
           <li>
             <a href="2_1_typography.html">Typography & Alignment</a>
@@ -61,7 +49,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large green' href='#' data-target='css2'>CSS 2</a>
+        <a class='dropdown-button btn btn-large green' href='#' data-activates='css2'>CSS 2</a>
         <ul id='css2' class='dropdown-content'>
           <li>
             <a href="3_1_cards.html">Cards</a>
@@ -87,7 +75,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-target='js1'>JS 1</a>
+        <a class='dropdown-button btn btn-large yellow black-text' href='#' data-activates='js1'>JS 1</a>
         <ul id='js1' class='dropdown-content'>
           <li>
             <a href="4_1_carousel.html">Carousel</a>
@@ -110,7 +98,7 @@
         </ul>
       </div>
       <div class="col s3">
-        <a class='dropdown-button btn btn-large red' href='#' data-target='js2'>JS 2</a>
+        <a class='dropdown-button btn btn-large red' href='#' data-activates='js2'>JS 2</a>
         <ul id='js2' class='dropdown-content'>
           <li>
             <a href="5_1_parallax.html">Parallax</a>
@@ -140,13 +128,13 @@
   <!-- START HERE -->
 
   <!-- BREADCRUMB -->
-  <nav class="grey">
-    <div class="nav-wrapper">
-      <div class="container">
-        <div class="col s12">
-          <a href="#" class="breadcrumb">Home</a>
-          <a href="#" class="breadcrumb">Users</a>
-          <a href="#" class="breadcrumb">Brad</a>
+  <nav>
+    <div>
+      <div>
+        <div>
+          <a href="#">Home</a>
+          <a href="#">Users</a>
+          <a href="#">Brad</a>
         </div>
       </div>
     </div>
@@ -155,57 +143,33 @@
   <br>
   <br>
 
-  <!-- MOVES CONTENT UP -->
-  <div style="margin-top: 200px;"></div>
-
   <!-- FOOTER -->
-  <footer class="page-footer grey darken-3">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m6">
-          <h4 class="white-text">About Us</h4>
-          <p class="grey-text text-lighten-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae rerum quod
-            aliquid ab numquam est ea fugiat aliquam, ipsam, esse commodi? Officiis rerum pariatur unde officia
-            praesentium iusto sit alias!</p>
-        </div>
-        <div class="col s12 m4 offset-m2">
-          <h4 class="white-text">About Us</h4>
-          <ul>
-            <li><a href="#!" class="grey-text text-lighten-2">Link 1</a></li>
-            <li><a href="#!" class="grey-text text-lighten-2">Link 2</a></li>
-            <li><a href="#!" class="grey-text text-lighten-2">Link 3</a></li>
-            <li><a href="#!" class="grey-text text-lighten-2">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright grey darken-4">
-      <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
-    </div>
+  <footer>
 
   </footer>
 
 
   <!-- END HERE -->
 
-  <!-- Import  materialize.js -->
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
 
-      // Dropdown JS
-      var elems = document.querySelectorAll('.dropdown-button');
-      var instances = M.Dropdown.init(elems, {
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.dropdown-button').dropdown({
         constrainWidth: false,
-        hover: false,
-        alignment: "left",
-        coverTrigger: false
+        hover: true,
+        belowOrigin: true,
+        alignment: 'left'
       });
 
-      // My JS
+      // JAVASCRIPT START HERE //
+
+
+
 
     });
   </script>
